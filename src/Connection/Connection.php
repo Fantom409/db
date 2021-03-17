@@ -441,9 +441,9 @@ abstract class Connection implements ConnectionInterface
      *
      * @throws Exception
      *
-     * @return PDO the PDO instance for the currently active master connection.
+     * @return PDO|null the PDO instance for the currently active master connection.
      */
-    public function getMasterPdo(): PDO
+    public function getMasterPdo(): ?PDO
     {
         $this->open();
 

@@ -25,11 +25,11 @@ abstract class TableSchema
      *
      * This is a convenient method for retrieving a named column even if it does not exist.
      *
-     * @param string $name column name
+     * @param string|null $name column name
      *
-     * @return ColumnSchema metadata of the named column. Null if the named column does not exist.
+     * @return ColumnSchema|null metadata of the named column. Null if the named column does not exist.
      */
-    public function getColumn(?string $name): ColumnSchema
+    public function getColumn(?string $name): ?ColumnSchema
     {
         return $this->columns[$name] ?? null;
     }

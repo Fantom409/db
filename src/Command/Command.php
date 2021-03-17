@@ -12,6 +12,7 @@ use Psr\Log\LogLevel;
 use Throwable;
 use Yiisoft\Cache\CacheInterface;
 use Yiisoft\Cache\Dependency\Dependency;
+use Yiisoft\Db\Connection\Connection;
 use Yiisoft\Db\Connection\ConnectionInterface;
 use Yiisoft\Db\Data\DataReader;
 use Yiisoft\Db\Exception\Exception;
@@ -107,6 +108,9 @@ class Command
      */
     private $retryHandler;
 
+    /**
+     * @var ConnectionInterface|Connection
+     */
     private ConnectionInterface $db;
     private ?PDOStatement $pdoStatement = null;
     private int $fetchMode = PDO::FETCH_ASSOC;

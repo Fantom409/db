@@ -411,6 +411,7 @@ class Query implements QueryInterface, ExpressionInterface
 
         $command = $this->createCommand();
         $params = $command->getParams();
+
         $command->setSql($this->db->getQueryBuilder()->selectExists($command->getSql()));
         $command->bindValues($params);
 
@@ -426,7 +427,7 @@ class Query implements QueryInterface, ExpressionInterface
      *
      * @throws Exception|InvalidConfigException|Throwable
      *
-     * @return bool|string
+     * @return false|null|string
      */
     protected function queryScalar($selectExpression)
     {
